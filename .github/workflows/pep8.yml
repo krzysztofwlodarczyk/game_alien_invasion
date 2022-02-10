@@ -34,4 +34,4 @@ jobs:
           # Give arguments to the pycodestyle command.
           arguments: # optional, default is 
           # The commenter bot token
-          token: ${{github_token}}
+          token: ${{ secrets.github_token }}
