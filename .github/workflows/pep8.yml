@@ -32,6 +32,6 @@ jobs:
         uses: quentinguidee/pep8-action@v2.0.13-dev
         with:
           # Give arguments to the pycodestyle command.
-          arguments: # optional, default is 
+          arguments: '--max-line-length=120' 
           # The commenter bot token
           token: ${{ secrets.github_token }}
