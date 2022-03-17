@@ -9,6 +9,12 @@ class Ship:
         """Initialize the ship and set its starting position."""
         self.settings = Settings()
 
+        # self.screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
+        # self.settings.screen_width = self.screen.get_rect().width
+        # self.settings.screen_height = self.screen.get_rect().height
+
+        pygame.display.set_caption("Alien Invasion")
+
         # Movement flag
         self.moving_right = False
         self.moving_left = False
@@ -37,9 +43,9 @@ class Ship:
 
     def update(self):
         """Update the ship's position based on the movement flag."""
-        if self.moving_right:
+        if self.moving_right and self.rect.right < self.screen_rect.right:
             self.x += self.settings.ship_speed
-        if self.moving_left:
+        if self.moving_left and self.rect.left > 0:
             self.x -= self.settings.ship_speed
 
         self.rect.x = self.x
